@@ -1,5 +1,5 @@
 # Feedback app
 
-Web application use to collect customer feedback. 
+Web application used to collect customer feedback. 
 
 Build using React.
