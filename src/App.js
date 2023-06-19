@@ -11,18 +11,20 @@ const Button = (props) => {
 
 
 const Statistics = ({good, neutral, bad}) => {
+  const averageScore = ((good - bad) / (good + neutral + bad)).toFixed(2)
+  const positivePercentage = ((good / (good + neutral + bad)) * 100).toFixed(0)
+
   if (good + neutral + bad === 0) {
     return (<p>No feedback given</p>)
   } else {
     return (
     <div>
-        <h2>Statistics</h2>
         <p>good: {good}</p>
         <p>neutral: {neutral}</p>
         <p>bad: {bad}</p>
         <p>all: {good + neutral + bad}</p>
-        <p>average: {(good - bad) / (good + neutral + bad)}</p>
-        <p>positive: {(good / (good + neutral + bad)) * 100}%</p>
+        <p>average score: {averageScore}</p>
+        <p>percentage of positive: {positivePercentage}%</p>
     </div>
     )
   }
